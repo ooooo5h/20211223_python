@@ -33,7 +33,7 @@ while True:
         for j, cpu_num in enumerate(cpu_numbers):
             if user_num == cpu_num:
                 if i == j :
-                    strike_count + 1
+                    strike_count += 1
                 else:
                     ball_count += 1
     
