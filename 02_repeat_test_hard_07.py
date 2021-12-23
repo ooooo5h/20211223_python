@@ -49,3 +49,30 @@ win_num_list = random.sample( range(1, 46), 6 )
 win_num_list.sort()
 
 print(f'당첨번호들 : {win_num_list}')
+
+# 내 번호와 / 당첨번호 비교해서 같은 숫자가 몇개가 있나 확인해보자
+# 반복문 중첩 활용
+
+correct_count = 0
+
+for my_num in my_num_list:
+    
+    for win_num in win_num_list:
+        
+        # 내 번호 하나를 들고 당첨번호랑 하나씩 보다가, 같은 걸 발견했다는 이야기
+        if my_num == win_num:
+            
+            # 구해야할것 : 발견할때마다 맞춘 갯수 1개씩 증가
+            correct_count += 1       
+            
+# correct_count에는 찾아낸 같은 숫자의 갯수가 담겨있다
+if correct_count == 6:
+    print('1등 당첨')
+elif correct_count == 5:
+    print('임시 3등')
+elif correct_count == 4:
+    print('4등 당첨')
+elif correct_count == 3:
+    print('5등 당첨')
+else:
+    print('다음 기회에..')
