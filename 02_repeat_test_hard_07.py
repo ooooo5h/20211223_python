@@ -14,7 +14,7 @@ for i in range(6):
         
         # 받은 숫자가 목록에 추가해도 되는 숫자인가? 검사해보고 => 통과하면 추가해주는걸로 변경
         # 검사 1 : 1~45 이내의 숫자?
-        is_range_ok = (1 <= input_num <= 45)    # bool값이 나올텐데, 그 값을 is_range_ok변수에 담아두자
+        is_range_ok = input_num in range(1, 46)    # bool값이 나올텐데, 그 값을 is_range_ok변수에 담아두자
         
         # 검사 2 : 이미 등록된 숫자? => 중복이 아니여야만 목록에 추가되게끔 코드 추가
         # my_num_list 내부의 숫자들을 하나씩 꺼내서
