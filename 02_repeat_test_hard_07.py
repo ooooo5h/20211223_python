@@ -19,12 +19,7 @@ for i in range(6):
         # 검사 2 : 이미 등록된 숫자? => 중복이 아니여야만 목록에 추가되게끔 코드 추가
         # my_num_list 내부의 숫자들을 하나씩 꺼내서
         # input_num과 같은 숫자를 발견하면 중복검사에서 빠꾸시키기
-        is_duplicated = False        # 중복아니라고 전제하에 실행
-        
-        for my_num in my_num_list:
-            if input_num == my_num :
-                # 중복이다
-                is_duplicated = True    
+        is_duplicated = input_num in my_num_list        # 목록안에 입력한 숫자가 있냐
                 
         # is_range_ok가 True이고, is_duplicated도 True일때만 목록에 추가
         if is_range_ok and not is_duplicated:
