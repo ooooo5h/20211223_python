@@ -44,7 +44,26 @@ print(my_num_list)
 
 # 당첨번호 6개를 생성 (랜덤생성)
 
-# 실제로 랜덤값이 나오는지 테스트해보자
-print(random.random())
-print(random.randrange(1, 46))     # 그래야 1 ~ 45의 랜덤 정수값이 생성됨
-print(random.randint(1,45))        # 1 ~ 45의 랜덤 정수값 생성
+win_num_list = []
+
+for i in range(6):
+    # 제대로 된 숫자가 나올 때 까지 무한 반복
+    while True:
+        
+        # 조건1 : 1~45는 랜덤의 범위를 지정하면 해결됨
+        # 조건2 : 중복은 여전히 검사를 해야하니까 조건문 필요
+        
+        # 조건1은 해결
+        random_num = random.randint(1,45)
+        
+        # 조건2 
+        # 이미 뽑힌 숫자 안에 없어야지 ok로 기본셋팅
+        is_dupl_ok = random_num not in win_num_list
+        
+        if is_dupl_ok :
+            # 통과했다면, 목록에 뽑아낸 랜덤값을 추가
+            win_num_list.append(random_num)
+            break   # 무한반복 탈출해서, 다음 숫자 뽑으러 가자
+        
+# 당첨 번호 목록을 확인해보자
+print(f'당첨번호들 : {win_num_list}')
