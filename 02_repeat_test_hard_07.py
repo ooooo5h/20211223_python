@@ -35,3 +35,25 @@ for i in range(6):
     
 # 목록에 잘 들어갔는지 test
 print(my_num_list)
+
+
+# 입력한 값들을 작은 수 ~ 큰 수 순서로 정리
+# 파이썬 기능 대신, for문로 연습 => Bubble sort 작성
+
+# 순서를 바꾸면서, 제일 큰 숫자를 뒤로 보내는 과정을 총 6번 반복한다(6개 자리 모두 정렬되게)
+for i in range( len(my_num_list)):
+    
+    # 두 개의 숫자를 꺼내서 순서가 제대로 되었는지 확인하는 반복문
+    # 순서가 반대라면, 그 둘의 위치를 서로 변경해주자
+    
+    # 돌려봤더니 프로그램이 죽는다 IndexError: list index out of range
+    # j : 0 ~ 5까지   j+1 : 1 ~ 6 까지 간다    => 6칸짜리는 0~5만 존재함   따라서 j는 0 ~ 4 까지만 가라
+    for j in range( len(my_num_list) - 1 ):
+        if my_num_list[j] > my_num_list[j+1]:
+            # 앞의 숫자가 더 큰 상황을 발견하면 순서를 바꿔줘야함
+            back_up = my_num_list[j]
+            my_num_list[j] = my_num_list[j+1]
+            my_num_list[j+1] = back_up
+            
+# 정렬된 결과한번 확인해보자
+print(my_num_list)
