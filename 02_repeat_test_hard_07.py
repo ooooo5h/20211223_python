@@ -64,6 +64,9 @@ for i in range(6):
             # 통과했다면, 목록에 뽑아낸 랜덤값을 추가
             win_num_list.append(random_num)
             break   # 무한반복 탈출해서, 다음 숫자 뽑으러 가자
-        
+    
+# 당첨 번호들도 오름차순으로 정렬
+win_num_list.sort()
+    
 # 당첨 번호 목록을 확인해보자
 print(f'당첨번호들 : {win_num_list}')
