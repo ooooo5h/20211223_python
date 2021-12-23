@@ -6,7 +6,7 @@ num1 = int(input('첫 숫자 입력 : '))
 num2 = int(input('두번째 숫자 입력 : '))
 
 # 최소공배수 (least common multiple)
-lcm = 0
+lcm = num1   # 둘 중 하나의 숫자에서 출발(연산횟수 줄이기)
 
 # 최대공약수 (greatest common factor)
 gcf = 0
@@ -20,12 +20,15 @@ gcf = 0
 
 # 반복문을 몇번 돌려야할 지 모르겠다
 while True:
-    lcm += 1
+    # lcm += 1    로직 변경하자 lcm = num1로 설정시, lcm += 1 하면 num+1부터 검사하니까 오류발생
     
     if (lcm % num1 == 0) and (lcm % num2 == 0):
         # lcm이 늘어나다가, 공배수를 발견시 이 안으로 들어옴
         # 최초 발견된 공배수가 제일 작으니까 반복문 탈출하자
         break
+    
+    # 검사 하고 난 다음에, 다음숫자로 넘기는 걸로 변경
+    lcm += 1
     
 ### 3 : 결과 출력
 # 상황에 따라 조건/반복 이용 출력
