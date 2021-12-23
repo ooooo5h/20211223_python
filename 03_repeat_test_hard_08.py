@@ -8,12 +8,18 @@ import random
 cpu_numbers = random.sample( range (1, 10), 3 ) 
 
 # 테스트 : 출제되는 숫자들이 뭔지 확인해보자
-print(cpu_numbers)
+# print(cpu_numbers)
+
+# 입력 시도 횟수를 기록할 변수 추가
+try_count = 0
 
 # 정답을 맞출 때 까지 계속 반복 입력
 # 언제 맞출지 모르니까 while
 while True:
     input_num = int( input('3자리 숫자 입력 : '))
+    
+    # 한번 추가로 시도했다고 기록
+    try_count += 1
     
     # 숫자를 3자리로 나눠서 저장해 줄 목록을 생성
     # 456 들어오면 => [4,5,6] => [100의 자리, 10의 자리, 1의 자리]
@@ -41,6 +47,7 @@ while True:
     print(f'{strike_count}S {ball_count}B 입니다.')
     
     # 3S라면 게임종료(축하합니다! 정답을 맞췄습니다.)
+    # 몇번의 입력 시도만에 맞췄는 지 표시
     if strike_count == 3:
-        print(f'축하합니다! 정답을 맞췄습니다.')
+        print(f'축하합니다! {try_count}회 만에 정답을 맞췄습니다.')
         break
